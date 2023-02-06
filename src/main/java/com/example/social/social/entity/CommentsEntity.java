@@ -25,8 +25,7 @@ public class CommentsEntity implements Serializable {
   @Column(name = "id")
   private Integer id;
 
-
-  @Column(name = "textComment")
+  @Column(nullable = false, length = 280, name = "textComment")
   private String textComment;
 
   @CreatedDate
