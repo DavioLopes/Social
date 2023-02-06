@@ -5,7 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.CreatedDate;
-
 import java.io.Serial;
 import java.io.Serializable;
 import java.time.Instant;
@@ -31,4 +30,8 @@ public class CommentsEntity implements Serializable {
   @CreatedDate
   @Column(nullable = false, name = "createdAt")
   private Instant createdDate;
+
+  @ManyToOne
+  @JoinColumn(name = "user_id")
+  private UserEntity comments;
 }

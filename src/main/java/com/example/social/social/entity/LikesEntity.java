@@ -23,5 +23,9 @@ public class LikesEntity implements Serializable {
   @Column(name = "id")
   private Integer id;
 
-
+  @ManyToOne
+  @JoinColumn(name = "user_id")
+  private UserEntity likes;
 }
+
+

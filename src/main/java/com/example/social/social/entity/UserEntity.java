@@ -5,7 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.CreatedDate;
-
 import java.io.Serial;
 import java.io.Serializable;
 import java.time.Instant;
@@ -46,5 +45,10 @@ public class UserEntity implements Serializable {
   @OneToMany(mappedBy = "users", fetch = FetchType.LAZY)
   private List<PostEntity> posts;
 
+  @OneToMany(mappedBy = "comments", fetch = FetchType.LAZY)
+  private List<CommentsEntity> comments;
+
+  @OneToMany(mappedBy = "likes", fetch = FetchType.LAZY)
+  private List<LikesEntity> likes;
 
 }
